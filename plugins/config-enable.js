@@ -19,8 +19,8 @@ rows: [
 {title: "📵 | АНТИЗВОНОК", description: "ВКЛЮЧИТЬ ФУНКЦИЮ ЗАПРЕТА ЗВОНКОВ", rowId: `${usedPrefix + command} антизвонок`},
 {title: "💬 | АНТИЛИЧКА", description: "ЗАПРЕТ СООБЩЕНИЙ В ЛИЧКУ БОТУ", rowId: `${usedPrefix + command} антиличка`},
 {title: "🤬 | АНТИМАТ", description: "ФУНКЦИЯ УДАЛЕНИЯ ЗА МАТ ИЗ ГРУППЫ", rowId: `${usedPrefix + command} антимат`},
-{title: "🕸️ | ANTITRABAS", description: "ACTIVA O DESACTIVA EL ANTI BINARIOS O TRABAS", rowId: `${usedPrefix + command} antitraba`},
-{title: "🥸 | ASISTENTE", description: "ACTIVA O DESACTIVA EL ASISTENTE DE GRUPOS 🥸", rowId: `${usedPrefix + command} asistente`},
+{title: "🕸️ | АНТИБЛОК", description: "ВКЛЮЧЕНИЕ ИЛИ ВЫКЛЮЧЕНИЕ ЗАЩИТЫ ОТ ДВОИЧНЫХ ФАЙЛОВ ИЛИ ПОМЕХ", rowId: `${usedPrefix + command} антиблок`},
+{title: "🥸 | ПОМОЩНИК", description: "ВКЛЮЧИТЬ ИЛИ ВЫКЛЮЧИТЬ МАСТЕР ГРУПП 🥸", rowId: `${usedPrefix + command} помошник`},
 {title: "🎭 | ASISTENTE GRUPOSROL", description: "ACTIVA O DESACTIVA EL ASISTENTE DE GRUPOS DE ROL", rowId: `${usedPrefix + command} gruposrol`},
 ]}, ]
 //let name = await conn.getName(m.sender)
@@ -61,10 +61,10 @@ footer: `┏━━━━━━━━━━━━━┓
 ┣ ඬ⃟ℹ️ _${usedPrefix}выключить *антимат*_
 ┣ ඬ⃟ℹ️ _${usedPrefix}включить *антиараб*_
 ┣ ඬ⃟ℹ️ _${usedPrefix}выключить *антиараб*_
-┣ ඬ⃟ℹ️ _${usedPrefix}включить *antitraba*_
-┣ ඬ⃟ℹ️ _${usedPrefix}выключить *antitraba*_
-┣ ඬ⃟ℹ️ _${usedPrefix}включить *asistente*_
-┣ ඬ⃟ℹ️ _${usedPrefix}выключить *asistente*_
+┣ ඬ⃟ℹ️ _${usedPrefix}включить *антиблок*_
+┣ ඬ⃟ℹ️ _${usedPrefix}выключить *антиблок*_
+┣ ඬ⃟ℹ️ _${usedPrefix}включить *помошник*_
+┣ ඬ⃟ℹ️ _${usedPrefix}выключить *помошник*_
 ┣ ඬ⃟ℹ️ _${usedPrefix}включить *gruposrol*_
 ┣ ඬ⃟ℹ️ _${usedPrefix}выключить *gruposrol*_
 ┗━━━━━━━━━━━━━┛`,
@@ -250,7 +250,7 @@ throw false
 }}
 chat.antiToxic = isEnable
 break
-case 'antitraba':
+case 'антиблок':
 if (m.isGroup) {
 if (!(isAdmin || isOwner)) {
 global.dfail('admin', m, conn)
@@ -258,7 +258,7 @@ throw false
 }}
 chat.antiTraba = isEnable
 break
-case 'asistente':
+case 'помошник':
 if (m.isGroup) {
 if (!(isAdmin || isOwner)) {
 global.dfail('admin', m, conn)
