@@ -12,7 +12,7 @@ ESCRIBE LOS SIGUIENTES COMANDOS UNO POR UNO:
 > pkg install imagemagick -y
 > pkg install yarn
 > git clone https://github.com/s1995s1/serega1231.git
-> cd jok
+> cd serega1231
 > yarn install 
 > npm update
 > npm start
