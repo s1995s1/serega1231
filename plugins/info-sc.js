@@ -7,8 +7,8 @@ let buttonMessage= {
 'isForwarded': false,
 'externalAdReply': {
 'mediaUrl': 'https://chat.whatsapp.com/CEYmCcV6UgO19tO3n56VOx',
-'title': 'Группа бота ꧁༺JoKeR༻꧂ ⁩',
-'body': '꧁༺JoKeR༻꧂',
+'title': 'Группа бота ꧁༺Хулиган༻꧂ ⁩',
+'body': '꧁༺Хулиган༻꧂',
 'thumbnail': imagen1,
 'sourceUrl': 'https://chat.whatsapp.com/CEYmCcV6UgO19tO3n56VOx' }},
 'caption': texto,

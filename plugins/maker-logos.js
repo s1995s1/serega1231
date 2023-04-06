@@ -416,8 +416,8 @@ var effects = [
     "url": "https://textpro.me/create-ninja-logo-online-935.html"
   },
   {
-    "title": "Logo-Joker",
-    "url": "https://textpro.me/create-logo-joker-online-934.html"
+    "title": "Logo-Хулиган",
+    "url": "https://textpro.me/create-logo-Хулиган-online-934.html"
   },
   {
     "title": "Wicker",
