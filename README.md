@@ -1,6 +1,5 @@
-
-
 ### `—◉ 👾 Установка в термукс 👾`
+
 ```bash
 ESCRIBE LOS SIGUIENTES COMANDOS UNO POR UNO:
 > cd
@@ -12,6 +11,7 @@ ESCRIBE LOS SIGUIENTES COMANDOS UNO POR UNO:
 > pkg install ffmpeg -y
 > pkg install imagemagick -y
 > pkg install yarn
+> git clone https://github.com/s1995s1/serega1231.git
 > cd jok
 > yarn install 
 > npm update
@@ -19,6 +19,7 @@ ESCRIBE LOS SIGUIENTES COMANDOS UNO POR UNO:
 ```
 
 ### `—◉ ✔️ ACTIVAR EN CASO DE DETENERSE ✔️`
+
 ```bash
 ESCRIBE LOS SIGUIENTES COMANDOS UNO POR UNO:
 > cd 
@@ -27,6 +28,7 @@ ESCRIBE LOS SIGUIENTES COMANDOS UNO POR UNO:
 ```
 
 ### `—◉ 👽 OBTENER OTRO CODIGO QR 👽`
+
 ```bash
 ESCRIBE LOS SIGUIENTES COMANDOS UNO POR UNO:
 > cd 
