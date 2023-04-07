@@ -1,24 +1,24 @@
 let handler = async (m) => {
     m.reply(
-    `*_➤ Asociación de grupos de anime S.A._*
+    `*_➤Ассоциация аниме-групп S. A._*
 
-    **Sean bienvenidos los grupos de anime y todos aquellos que quieran pertenecer aunque no sean de anime**
+    **Приветствуются аниме-группы и все те, кто хочет присоединиться, даже если они не из аниме**
     
-    **REGLAS**
+    **ПРАВИЛО**
     
-    **Primera regla** Tiene que haber solo un administrador del grupo que quiere asociarse o que lo represente
+    **Первое правило** В группе должен быть только один администратор, который хочет присоединиться или который представляет вас
     
-    **Segunda regla** Este grupo no debe de utilizarse para chat, en este grupo solamente se deben de exponer las claves de algún problema en específico que tengan sus grupos
+    **Второе правило** Эта группа не должна использоваться для чата, в этой группе вы должны раскрывать только ключи к какой-либо конкретной проблеме, с которой сталкиваются ваши группы
     
-    **Tercera regla** 
-    No se permiten los enlaces de invitación de sus propios grupos Y si alguien va a ayudar a algún grupo en específico tienen que enviar se los enlaces en privado
+    **Третье правило** 
+    Ссылки на приглашения от их собственных групп запрещены, и если кто-то собирается помочь какой-либо конкретной группе, они должны отправлять им ссылки в частном порядке
     
-    **Cuarta regla**
-    Todos aquí son administradores de sus grupos, por lo tanto siendo de igual a igual deben respetarse independientemente de los que estén aquí fundando el grupo
+    **Четвертое правило**
+    Все присутствующие здесь являются администраторами своих групп, поэтому, будучи равноправными, они должны уважать друг друга независимо от тех, кто здесь основал группу
     
-    Para cualquier conflicto entre grupos debe solicitarse *"La sala del trono* Qué es un grupo especial para resoluciones de problemas entre grupos los cuales no deben manifestarse aquí sino en privado con el administrador superior de este grupo, el cual tiene la facultad de encontrar una solución al conflicto entre grupos
+    Для любого межгруппового конфликта следует запрашивать * " Тронный зал* Что такое специальная группа для разрешения межгрупповых проблем, которые должны решаться не здесь, а наедине со старшим администратором этой группы, который уполномочен найти решение межгруппового конфликта
     
-    **Sin nada más por decir les agradezco por unirse a este grupo**
+    **Больше нечего сказать, я благодарю вас за то, что вы присоединились к этой группе**
 
     `
     )}

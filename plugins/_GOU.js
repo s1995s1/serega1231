@@ -1,19 +1,19 @@
 let handler = async (m) => {
     m.reply(
-    `*_➤ Asociación de grupos de anime S.A._*
+    `*_➤ Ассоциация аниме-групп S. A._*
 
-    **Sean bienvenidos los grupos de anime y todos aquellos que quieran pertenecer aunque no sean de anime**
+    **Приветствуются аниме-группы и все те, кто хочет присоединиться, даже если они не из аниме**
     
     *https://chat.whatsapp.com/IxskSqj7CWUC4ZUpl1Hn04*
     
-    En este grupo está formada una alianza entre los grupos de WhatsApp con temática Otaku y diversos
+    В этой группе сформирован альянс между группами WhatsApp на тему отаку и различными
     
-    Se pretende que entre todos hagamos un convenio que sirva para prepararnos contra el spam
+    Предполагается, что между всеми нами будет заключено соглашение, которое поможет нам подготовиться к борьбе со спамом
     
-    Este grupo no será activo por lo que los participantes deben activarlo y cuando llegue un mensaje este se activará inmediatamente y sólo va a ser para reuniones de administración duda o consulta entre grupos
+    Эта группа не будет активной, поэтому участники должны активировать ее, и когда придет сообщение, она будет немедленно активирована, и это будет только для административных встреч, сомнений или консультаций между группами
     
-    Se requiere total seriedad en este grupo...
-    Los administradores de los grupos se respetaran
+    В этой группе требуется полная серьезность...
+    Администраторы групп должны уважать друг друга
     `
     )}
     handler.command = /^(asociaciongruposotakus|asociacion de grupos otakus|GOU)$/i

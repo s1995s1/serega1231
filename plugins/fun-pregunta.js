@@ -1,12 +1,12 @@
 let handler = async (m, { command, text }) => m.reply(`
-*⁉️ *PREGUNTAS* ⁉️*
+*⁉️ *РАССПРОСЫ* ⁉️*
   
-*PREGUNTA:* ${text}
-*RESPUESTA:* ${['Si','Tal vez sí','Posiblemente','Probablemente no','No','Imposible'].getRandom()}
+*ВОПРОС:* ${text}
+*ОТВЕТ:* ${['Если','Может быть, да','Возможно','Вероятно, нет','Нет','Я согласен','Невозможно'].getRandom()}
 `.trim(), null, m.mentionedJid ? {
 mentions: m.mentionedJid
 } : {})
 handler.help = ['pregunta <texto>?']
 handler.tags = ['kerang']
-handler.command = /^pregunta|preguntas|apakah$/i
+handler.command = /^бот|preguntas|apakah$/i
 export default handler
