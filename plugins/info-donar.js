@@ -17,7 +17,7 @@ let donar =`
 `.trim()
 let mentionedJid = [who]
 conn.sendButton(m.chat, donar, wm,/* 'https://www.paypal.me/AMxScan', 'PAYPAL', null, null, */[
-['ГЛАВНОЕ МЕНЮ', '/меню']],
+['ГЛАВНОЕ МЕНЮ', '/менюшка']],
  '', { contextInfo: { mentionedJid }})}
 handler.help = ['donasi']
 handler.tags = ['info']

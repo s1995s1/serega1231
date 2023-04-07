@@ -1,7 +1,7 @@
 /* Creditos a https://github.com/FG98F */
 
 let handler = async (m, { conn, usedPrefix, command }) => {	
-if (!m.quoted) throw `*[❗INFO❗] RESPONDA AL MENSAJE QUE DESEA QUE SEA ELIMINADO*`
+if (!m.quoted) throw `*[❗INFO❗] ОТВЕТЬТЕ НА СООБЩЕНИЕ, КОТОРОЕ ВЫ ХОТИТЕ УДАЛИТЬ*`
 try {
 let delet = m.message.extendedTextMessage.contextInfo.participant
 let bang = m.message.extendedTextMessage.contextInfo.stanzaId
@@ -11,7 +11,7 @@ return conn.sendMessage(m.chat, { delete: m.quoted.vM.key })
 }}
 handler.help = ['del', 'delete']
 handler.tags = ['group']
-handler.command = /^del(ete)?$/i
+handler.command = /^удалить(ete)?$/i
 handler.group = true
 handler.admin = true
 handler.botAdmin = true

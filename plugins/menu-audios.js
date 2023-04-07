@@ -10,8 +10,8 @@ let name = await conn.getName(m.sender)
 let str = `
 *ミ💖 HOLA _${name}_ 💖彡*
 
-*<MENU AUDIOS/>*
-*- ESCRIBE LAS SIGUIENTES PALABRAS O FRASES SIN NINGUN PREFIJO (#, /, *, .)*
+*<МЕНЮ АУДИО/>*
+*- НАПИШИТЕ СЛЕДУЮЩИЕ СЛОВА ИЛИ ФРАЗЫ БЕЗ КАКИХ-ЛИБО ПРЕФИКСОВ (#, /, *, .)*
 
 ° ඬ⃟🔊 Болею
 ° ඬ⃟🔊 Время

@@ -7,8 +7,8 @@ let chat = global.db.data.chats[m.chat]
 //const estiloaudio = { key: {  fromMe: false, participant: `0@s.whatsapp.net`, ...(m.chat ? { remoteJid: "5215517489568-1625305606@g.us" } : {}) }, message: {"audioMessage": { "mimetype":"audio/ogg; codecs=opus", "seconds": "99569", "ptt": "true"}}}  
 
 if (/^bot$/i.test(m.text) && !chat.isBanned) { 
-conn.sendPresenceUpdate('recording', m.chat)    
-conn.sendButton(m.chat, '*HOLA, ¿COMO TE PUEDO AYUDAR?*', wm, [['MENU DE COMANDOS', `#menu`]], 'conversation', { sendEphemeral: true, quoted: estilo })
+conn.sendPresenceUpdate('запись', m.chat)    
+conn.sendButton(m.chat, '*ПРИВЕТ, ЧЕМ Я МОГУ ТЕБЕ ПОМОЧЬ?*', wm, [['КОМАНДНОЕ МЕНЮ', `#menu`]], 'беседа', { sendEphemeral: true, quoted: estilo })
 conn.sendFile(m.chat, vn, 'bot.mp3', null, m, true, { type: 'audioMessage', seconds: '4556', ptt: true, sendEphemeral: true, quoted: m /*estiloaudio*/})}
 return !0
 }

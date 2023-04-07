@@ -1,6 +1,6 @@
 let media = './Menu2.jpg'
 let handler = async (m, { conn, command }) => conn.sendButton(m.chat, `
-*Hola 👋🏻, unete a los grupos oficiales para pasar un rato agradable usando el Bot 🌎ANI MX SCANS🌏*
+*Здравствуйте👋 🏻, присоединяйтесь к официальным группам, чтобы приятно провести время с помощью бота 🌎ХУЛИГАН🌏*
 
 *_➤ Grupos oficiales del Bot:_*
 *_1.-_* *https://chat.whatsapp.com/L4VRAzaYc11D4LSpt8rB9W*
