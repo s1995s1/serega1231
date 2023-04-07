@@ -1,6 +1,6 @@
 import fetch from 'node-fetch'
 let handler = async(m, { conn, text }) => {
-if (!text) throw `*[❗INFO❗] INGRESE EL NOMBRE DE ALGUNA CANCIÓN PARA BUSCAR*`
+if (!text) throw `*[❗INFO❗] ВВЕДИТЕ НАЗВАНИЕ КАКОЙ-НИБУДЬ ПЕСНИ ДЛЯ ПОИСКА*`
 try {
 let res = await fetch(`https://hadi-api.herokuapp.com/api/soundcloud/play?query=${text}`)
 let json = await res.json()
