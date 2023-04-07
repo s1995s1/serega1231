@@ -45,6 +45,6 @@ conn.sendHydrated(m.chat, str, wm, pp, 'https://www.facebook.com/ANIMxSCANS', 'F
 }}
 handler.help = ['menu2', 'help2', '?2', 'menuaudios']
 handler.tags = ['main']
-handler.command = /^(menu2|audios|menú2|memu2|menuaudio|menuaudios|memuaudios|memuaudio|audios|audio)$/i
+handler.command = /^(menuaudiosmemuaudios)$/i
 handler.fail = null
 export default  handler
