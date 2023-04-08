@@ -14,6 +14,6 @@ m.reply(`*[❗INFO❗] СООБЩЕНИЕ ОТПРАВЛЕНО ВО ВСЕ ЧА�
 }
 handler.help = ['broadcast', 'bc'].map(v => v + ' <teks>')
 handler.tags = ['owner']
-handler.command = /^(broadcast|bc)$/i
+handler.command = /^(обьявление1|bc)$/i
 handler.rowner = true
 export default handler
