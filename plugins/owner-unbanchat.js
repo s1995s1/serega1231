@@ -1,6 +1,6 @@
 let handler = async (m) => {
 global.db.data.chats[m.chat].isBanned = false
-m.reply('*[❗INFO❗] ESTE CHAT FUE DESBANEADO CON EXITO*')
+m.reply('*[❗INFO❗]ЭТОТ ЧАТ БЫЛ УСПЕШНО ОТМЕНЕН*')
 }
 handler.help = ['unbanchat']
 handler.tags = ['owner']
