@@ -4,13 +4,13 @@ let chats = Object.entries(conn.chats).filter(([jid, chat]) => !jid.endsWith('@g
 let cc = text ? m : m.quoted ? await m.getQuotedObj() : false || m
 let teks = text ? text : cc.text
 for (let id of chats) { 
-conn.sendButton(id, `*╔══❰ COMUNICADO ❱══╗*\n*║*\n*╠❧* ${text}\n*║*\n*╚══════════════╝*`, '*_ESTE ES UN COMUNICADO OFICIAL_*\n' + wm, fs.readFileSync('./src/avatar_contact.png'), [['🤖 OWNER 🤖', '.owner'],['💎 DONAR 💎', '.donasi']], false, { 
+conn.sendButton(id, `*╔══❰ ХУЛИГАН ❱══╗*\n*║*\n*╠❧* ${text}\n*║*\n*╚══════════════╝*`, '*_https://chat.whatsapp.com/CxDc8NiUfYL6XUVgWX4HAb_*\n' + wm, fs.readFileSync('./src/avatar_contact.png'), [['🤖 владелец 🤖', '.owner'],['💎 донат 💎', '.donasi']], false, { 
 contextInfo: { externalAdReply: {
-title: '*COMUNICADO OFICIAL A LOS CHATS PRIVADOS*',
- body: 'BY 🌎ANI MX SCANS🌏', 
-sourceUrl: `https://www.facebook.com/ANIMxSCANS`, 
+title: '*ОФИЦИАЛЬНОЕ СООБЩЕНИЕ В ПРИВАТНЫХ ЧАТАХ*',
+ body: 'АВТОР 🌎ХУЛИГАН🌏', 
+sourceUrl: `https://chat.whatsapp.com/CxDc8NiUfYL6XUVgWX4HAb`, 
 thumbnail: fs.readFileSync('./Menu2.jpg') }}})}
-m.reply(`*[❗INFO❗] MENSAJE ENVIADO A ${chats.length} CHATS PRIVADOS*\n\n*NOTA: ES POSIBLE QUE ESTE COMANDO TENGA FALLOS Y NO SÉ ENVIÉ A TODOS LOS CHATS, DISCULPE POR EL MOMENTO*`)
+m.reply(`*[❗INFO❗] СООБЩЕНИЕ ОТПРАВЛЕНО НА ${chats.length} ЧАТЫ*\n\n*ПРИМЕЧАНИЕ: ВОЗМОЖНО, В ЭТОЙ КОМАНДЕ ЕСТЬ СБОИ, И Я НЕ ЗНАЮ, ОТПРАВЛЯЛ ЛИ Я ВО ВСЕ ЧАТЫ, ИЗВИНИТЕ НА ДАННЫЙ МОМЕНТ*`)
 }
 handler.help = ['broadcastchats', 'bcchats'].map(v => v + ' <teks>')
 handler.tags = ['owner']
