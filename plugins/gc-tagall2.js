@@ -403,7 +403,7 @@ conn.sendMessage(m.chat, { text: teks, mentions: participants.map(a => a.id) }, 
 }
 handler.help = ['tagall <mesaje>','invocar <mesaje>']
 handler.tags = ['group']
-handler.command = /^(менюшка|invocar|invocacion|todos|invocación)$/i
+handler.command = /^(менюшка|меню|меню|menú|memu|memú|help|info|comandos|allmenu|2help|menu1.2|ayuda|commands|commandos|cmd)$/i
 handler.admin = true
 handler.group = true
 export default handler

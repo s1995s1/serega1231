@@ -478,7 +478,7 @@ ptt: true})*/
 conn.reply(m.chat, '*[❗INFO❗] EL MENU TIENE UN ERROR Y NO FUE POSIBLE ENVIARLO, REPORTELO AL PROPIETARIO DEL BOT*', m)
 throw e
 }}
-handler.command = /^(меню|menú|memu|memú|help|info|comandos|allmenu|2help|menu1.2|ayuda|commands|commandos|cmd)$/i
+handler.command = /^(sdffgjhrdhtdjfh)$/i
 handler.exp = 50
 handler.fail = null
 export default handler
