@@ -1,5 +1,5 @@
 let handler = async (m, { conn, command, text, usedPrefix }) => {
-if (!text) throw `*[❗INFO❗] INGRESE EL @tag DE ALGUN PARTICIPANTE DEL GRUPO O EL NOMBRE DE LA PERSONA*`
+if (!text) throw `*[❗INFO❗]ВВЕДИТЕ @tag КАКОГО-ЛИБО УЧАСТНИКА ГРУППЫ ИЛИ ИМЯ ЧЕЛОВЕКА*`
 if (command == 'gay2') {
 conn.reply(m.chat, `
 _*${text.toUpperCase()}* *ES 🏳️‍🌈* *${(500).getRandom()}%* *GAY*_
