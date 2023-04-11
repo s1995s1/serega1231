@@ -10,7 +10,7 @@ rows: [
 {title: "🔗 | АНТИССЫЛКА 2", description: "ВКЛЮЧЕНИЕ БАНА ЗА ЛЮБЫЕ ИНТЕРНЕТ ССЫЛКИ", rowId: `${usedPrefix + command} антиссылка2`},    
 {title: "🔎 | ОБНАРУЖЕНИЕ", description: "ВКЛЮЧЕНИЕ ОБНАРУЖЕНИЯ ЛЮБЫХ ИЗМЕНЕНИЙ В ГРУППЕ", rowId: `${usedPrefix + command} обнаружение`},      
 {title: "❗ | АДМИН", description: "ВКЛЮЧЕНИЕ ФУНКЦИЙ АДМИНИСТРАТОРА У БОТА", rowId: `${usedPrefix + command} ботадмин`},    
-{title: "☑️ | AUTOREAD", description: "MARCA AUTOMATICAMENTE LAS CONVERSACIONES COMO LEIDO", rowId: `${usedPrefix + command} autoread`},
+{title: "☑️ |  ОГРАНИЧЕНИЕ", description: "MARCA AUTOMATICAMENTE LAS CONVERSACIONES COMO LEIDO", rowId: `${usedPrefix + command} ограничить`},
 {title: "🔊 | ГОЛОСОВЫЕ", description: "ВКЛЮЧЕНИЕ ГОЛОСОВЫХ СООБЩЕНИЙ У БОТА", rowId: `${usedPrefix + command} голосовые`},
 {title: "👾 | АВТОСТИКЕР", description: "ВКЛЮЧЕНИЕ ФУНКЦИИ АВТОМАТИЧЕСКОГО СОЗДАНИЯ СТИКЕРОВ ИЗ МЕДИАФАЙЛОВ", rowId: `${usedPrefix + command} автостикер`},
 {title: "💬 | PCONLY", description: "EL BOT SOLO RESPONDERA A LOS COMANDOS SI ES UN CHAT PRIVADO", rowId: `${usedPrefix + command} pconly`},
@@ -191,7 +191,7 @@ throw false
 }
 global.opts['nyimak'] = isEnable
 break
-case 'autoread':
+case 'ограничить':
 isAll = true
 if (!isROwner) {
 global.dfail('rowner', m, conn)
