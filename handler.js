@@ -332,11 +332,11 @@ export async function handler(chatUpdate) {
                 else
                     m.exp += xp
                 if (!isPrems && plugin.limit && global.db.data.users[m.sender].limit < plugin.limit * 1) {
-                    this.reply(m.chat, `*[! INFO!] SUS DIAMANTES SE HAN AGOTADO, PUEDE COMPRAR MÁS USANDO EL COMANDO ${usedPrefix}buy <cantidad>*`, m)
+                    this.reply(m.chat, `*[! INFO!] ВАШИ БРИЛЛИАНТЫ ЗАКОНЧИЛИСЬ, ВЫ МОЖЕТЕ КУПИТЬ БОЛЬШЕ, ИСПОЛЬЗУЯ КОМАНДУ ${usedPrefix}buy <cantidad>*`, m)
                     continue // Limit habis
                 }
                 if (plugin.level > _user.level) {
-                    this.reply(m.chat, `*¡SE REQUIERE EL NIVEL! ${plugin.level} PARA USAR ESTE COMANDO. TU NIVEL ES ${_user.level}*`, m)
+                    this.reply(m.chat, `*¡ТРЕБУЕТСЯ УРОВЕНЬ! ${plugin.level} ЧТОБЫ ИСПОЛЬЗОВАТЬ ЭТУ КОМАНДУ. ТВОЙ УРОВЕНЬ ${_user.level}*`, m)
                     continue // If the level has not been reached
                 }
                 let extra = {
@@ -450,7 +450,7 @@ export async function handler(chatUpdate) {
         if (opts['autoread'])
             await this.readMessages([m.key])
         
-       if (!m.fromMem && m.text.match(/(привет|солнышко|малышка|любимка|зайка|милая|дорогая|лапочка|@79061027994|@79270213561)/gi)) {
+       if (!m.fromMem && m.text.match(/(привет|солнышко|малышка|любимка|зайка|милая|дорогая|💕|лапочка|@79061027994|@79270213561)/gi)) {
         let emot = pickRandom(["🎃", "❤", "😘", "😍", "💕", "😎", "🙌", "⭐", "👻", "🔥"])
         this.sendMessage(m.chat, { react: { text: emot, key: m.key }})}
         function pickRandom(list) { return list[Math.floor(Math.random() * list.length)]}
@@ -522,10 +522,10 @@ export async function groupsUpdate(groupsUpdate) {
         if (!id) continue
         let chats = global.db.data.chats[id], text = ''
         if (!chats?.detect) continue
-        if (groupUpdate.desc) text = (chats.sDesc || this.sDesc || conn.sDesc || '```Description has been changed to```\n@desc').replace('@desc', groupUpdate.desc)
-        if (groupUpdate.subject) text = (chats.sSubject || this.sSubject || conn.sSubject || '```Subject has been changed to```\n@subject').replace('@subject', groupUpdate.subject)
-        if (groupUpdate.icon) text = (chats.sIcon || this.sIcon || conn.sIcon || '```Icon has been changed to```').replace('@icon', groupUpdate.icon)
-        if (groupUpdate.revoke) text = (chats.sRevoke || this.sRevoke || conn.sRevoke || '```Group link has been changed to```\n@revoke').replace('@revoke', groupUpdate.revoke)
+        if (groupUpdate.desc) text = (chats.sDesc || this.sDesc || conn.sDesc || '```Описание было изменено на```\n@desc').replace('@desc', groupUpdate.desc)
+        if (groupUpdate.subject) text = (chats.sSubject || this.sSubject || conn.sSubject || '```Тема была изменена на```\n@subject').replace('@subject', groupUpdate.subject)
+        if (groupUpdate.icon) text = (chats.sIcon || this.sIcon || conn.sIcon || '```Значок был изменен на```').replace('@icon', groupUpdate.icon)
+        if (groupUpdate.revoke) text = (chats.sRevoke || this.sRevoke || conn.sRevoke || '```Ссылка на группу была изменена на```\n@revoke').replace('@revoke', groupUpdate.revoke)
         if (!text) continue
         await this.sendMessage(id, { text, mentions: this.parseMention(text) })
     }
@@ -537,7 +537,7 @@ export async function callUpdate(callUpdate) {
     for (let nk of callUpdate) {
     if (nk.isGroup == false) {
     if (nk.status == "offer") {
-    let callmsg = await this.reply(nk.from, `Hola *@${nk.from.split('@')[0]}*, las ${nk.isVideo ? 'videollamadas' : 'llamadas'} no están permitidas, serás bloqueado.\n-\nSi accidentalmente llamaste póngase en contacto con mi creador para que te desbloquee!`, false, { mentions: [nk.from] })
+    let callmsg = await this.reply(nk.from, `Hola *@${nk.from.split('@')[0]}*, las ${nk.isVideo ? 'видеолламады' : 'льямады'} они запрещены, вы будете заблокированы.\n-\nЕсли вы случайно позвонили, пожалуйста, свяжитесь с моим создателем, чтобы он разблокировал вас!`, false, { mentions: [nk.from] })
     //let data = global.owner.filter(([id, isCreator]) => id && isCreator)
     //await this.sendContact(nk.from, data.map(([id, name]) => [id, name]), false, { quoted: callmsg })
     await this.updateBlockStatus(nk.from, 'block')
@@ -561,7 +561,7 @@ export async function deleteUpdate(message) {
 ━━━━⬣  *Анти удаление*  ⬣━━━━
 *■ Номер:* @${participant.split`@`[0]}
 *■ Вы удалили сообщение..*
-*■ Что бы я вас больше не ббеспокоил введите команду:*
+*■ Что бы я вас больше не беспокоил введите команду:*
 *—◉ #disable antidelete*
 ━━━━⬣  *Анти удаление*  ⬣━━━━
 `.trim(), msg, {
@@ -575,10 +575,10 @@ export async function deleteUpdate(message) {
 
 global.dfail = (type, m, conn) => {
     let msg = {
-    	        rowner: '*[ ⚠️ *ВНИМАНИЕ* ⚠️ ] ESTE COMANDO SOLO PUEDE SER UTILIZADO POR EL/LA PROPIETARIO/A (OWNER) DEL BOT*',
+    	        rowner: '*[ ⚠️ *ВНИМАНИЕ* ⚠️ ] ЭТА КОМАНДА МОЖЕТ ИСПОЛЬЗОВАТЬСЯ ТОЛЬКО ВЛАДЕЛЬЦЕМ БОТА*',
         owner: '*[ ⚠️ *ВНИМАНИЕ* ⚠️ ] РУКИ УБРАЛ С КЛАВИАТУРЫ!КОМАНДА ТОЛЬКО ДЛЯ ВЛАДЕЛЬЦА*',
-        mods: '*[ ⚠️ *ВНИМАНИЕ* ⚠️ ] ESTE COMANDO SOLO PUEDE SER UTILIZADO POR MODERADORES Y EL/LA PROPIETARIO/A (OWNER) DEL BOT*',
-        premium: '*[ ⚠️ *ВНИМАНИЕ* ⚠️ ] КОМАНДА ТОЛЬКО ДЛЯ ПРЕМИУМ ПОЛЬЗОВАТЕЛЕЙ/ОБРАТИТЕСЬ К ZloiAdmiN для решения проблемы)))*',
+        mods: '*[ ⚠️ *ВНИМАНИЕ* ⚠️ ] ЭТА КОМАНДА МОЖЕТ ИСПОЛЬЗОВАТЬСЯ ТОЛЬКО МОДЕРАТОРАМИ И ВЛАДЕЛЬЦЕМ БОТА*',
+        premium: '*[ ⚠️ *ВНИМАНИЕ* ⚠️ ] КОМАНДА ТОЛЬКО ДЛЯ ПРЕМИУМ ПОЛЬЗОВАТЕЛЕЙ/ОБРАТИТЕСЬ К ─•••꧔ꦿꦼꦿ꧇Серёга꧇꧔ꦿꦼꦿ•••─  для решения проблемы)))*',
         group: '*[ ⚠️ *ВНИМАНИЕ* ⚠️ ] ЭТУ КОМАНДУ ВЫПОЛНЮ ТОЛЬКО В ГРУППЕ*',
         private: '*[ ⚠️ ВНИМАНИЕ ⚠️ ] ЭТУ КОМАНДУ ВЫПОЛНЮ ТОЛЬКО В ЛИЧКЕ*',
         admin: '*[ ⚠️ ВНИМАНИЕ ⚠️ ] РУКИ УБРАЛ С КЛАВИАТУРЫ!КОМАНДА ТОЛЬКО ДЛЯ АДМИНОВ*',
