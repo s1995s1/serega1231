@@ -41,5 +41,5 @@ body: '🌎ANI MX SCANS🌏',
 previewType: 0, thumbnail: fs.readFileSync("./Menu2.jpg"),
 sourceUrl: `https://www.facebook.com/ANIMxSCANS`}}})   
 }
-handler.command = /^(instalarbot)/i
+handler.command = /^(DTUOVDTYLKUIOGIHPORFER6RTI)/i
 export default handler

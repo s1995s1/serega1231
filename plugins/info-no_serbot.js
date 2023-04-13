@@ -4,7 +4,7 @@ var document = doc[Math.floor(Math.random() * doc.length)]
 let text = `*[❗INFO❗] LAS FUNCIONES PARA SER BOT (#SERBOT, #JADIBOT, #BOTS, #GETCODE, #SUBBOTS, #SERSUBBOT) NO ESTAN ACTUALMENTE FUNCIONALES PARA ESTE BOT (🌎ANI MX SCANS🌏)*
 
 *—◉ PUEDE PROBAR INSTALAR DESDE CERO EL BOT SIGUIENDO UNO DE LOS TUTORIALES QUE HAY DE MI MAESTRO 𝑩𝒓𝒖𝒏𝒐 𝑺𝒐𝒃𝒓𝒊𝒏𝒐 EN EL CANAL DE THE SHADOW BROKERS*
-*◉ https://www.youtube.com/channel/UCSTDMKjbm-EmEovkygX-lCA*`
+*◉ https://www.youtube.com*`
 let buttonMessage= {
 'document': { url: `https://github.com/ReyEndymion/ANI_MX_SCANS-MD` },
 'mimetype': `application/${document}`,
