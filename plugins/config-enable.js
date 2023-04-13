@@ -13,6 +13,7 @@ rows: [
 {title: "☑️ |  ОГРАНИЧЕНИЕ", description: "MARCA AUTOMATICAMENTE LAS CONVERSACIONES COMO LEIDO", rowId: `${usedPrefix + command} ограничить`},
 {title: "🔊 | ГОЛОСОВЫЕ", description: "ВКЛЮЧЕНИЕ ГОЛОСОВЫХ СООБЩЕНИЙ У БОТА", rowId: `${usedPrefix + command} голосовые`},
 {title: "👾 | АВТОСТИКЕР", description: "ВКЛЮЧЕНИЕ ФУНКЦИИ АВТОМАТИЧЕСКОГО СОЗДАНИЯ СТИКЕРОВ ИЗ МЕДИАФАЙЛОВ", rowId: `${usedPrefix + command} автостикер`},
+{title: "☑️ | АВТО ЧТЕНИЕ", description: "ВКЛЮЧИТЬ ИЛИ ОТКЛЮЧИТЬ", rowId: `${usedPrefix + command} авточтение`},
 {title: "💬 | PCONLY", description: "EL BOT SOLO RESPONDERA A LOS COMANDOS SI ES UN CHAT PRIVADO", rowId: `${usedPrefix + command} pconly`},
 {title: "🏢 | GCONLY", description: "EL BOT SOLO RESPONDERA A LOS COMANDOS SI ES UN GRUPO", rowId: `${usedPrefix + command} gconly`},
 {title: "❌ | АНТИРАЗ", description: "ВКЛЮЧЕНИЕ ФУНКЦИИ АНТИ ОДНОРАЗОВОГО ПРОСМОТРА", rowId: `${usedPrefix + command} антираз`},
@@ -22,6 +23,7 @@ rows: [
 {title: "🕸️ | АНТИБЛОК", description: "ВКЛЮЧЕНИЕ ИЛИ ВЫКЛЮЧЕНИЕ ЗАЩИТЫ ОТ ДВОИЧНЫХ ФАЙЛОВ ИЛИ ПОМЕХ", rowId: `${usedPrefix + command} антиблок`},
 {title: "🥸 | ПОМОЩНИК", description: "ВКЛЮЧИТЬ ИЛИ ВЫКЛЮЧИТЬ МАСТЕР ГРУПП 🥸", rowId: `${usedPrefix + command} помошник`},
 {title: "🎭 | ASISTENTE GRUPOSROL", description: "ACTIVA O DESACTIVA EL ASISTENTE DE GRUPOS DE ROL", rowId: `${usedPrefix + command} gruposrol`},
+{title: "👑 | ТОЛЬКО АДМИН", description: "ВКЛЮЧИТЬ ИЛИ ОТКЛЮЧИТЬ", rowId: `${usedPrefix + command} толькоадмин`},
 ]}, ]
 //let name = await conn.getName(m.sender)
 const listMessage = {
@@ -167,6 +169,16 @@ throw false
 }}
 chat.autosticker = isEnable          
 break
+global.opts['nyimak'] = isEnable
+break
+case 'авточтение':
+isAll = true
+if (!isROwner) {
+global.dfail('rowner', m, conn)
+throw false
+}
+global.opts['autoread'] = isEnable
+break
 case 'голосовые':
 if (m.isGroup) {
 if (!(isAdmin || isOwner)) {
@@ -257,6 +269,14 @@ global.dfail('admin', m, conn)
 throw false
 }}
 chat.antiTraba = isEnable
+break
+case 'толькоадмин':
+if (m.isGroup) {
+if (!(isAdmin || isOwner)) {
+global.dfail('admin', m, conn)
+throw false
+}}
+chat.modoadmin = isEnable          
 break
 case 'помошник':
 if (m.isGroup) {
