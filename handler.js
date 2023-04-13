@@ -332,11 +332,11 @@ export async function handler(chatUpdate) {
                 else
                     m.exp += xp
                 if (!isPrems && plugin.limit && global.db.data.users[m.sender].limit < plugin.limit * 1) {
-                    this.reply(m.chat, `*[! INFO!] ВАШИ БРИЛЛИАНТЫ ЗАКОНЧИЛИСЬ, ВЫ МОЖЕТЕ КУПИТЬ БОЛЬШЕ, ИСПОЛЬЗУЯ КОМАНДУ ${usedPrefix}buy <cantidad>*`, m)
+                    this.reply(m.chat, `*[! INFO!] SUS DIAMANTES SE HAN AGOTADO, PUEDE COMPRAR MÁS USANDO EL COMANDO ${usedPrefix}buy <cantidad>*`, m)
                     continue // Limit habis
                 }
                 if (plugin.level > _user.level) {
-                    this.reply(m.chat, `*¡ТРЕБУЕТСЯ УРОВЕНЬ! ${plugin.level} ЧТОБЫ ИСПОЛЬЗОВАТЬ ЭТУ КОМАНДУ. ТВОЙ УРОВЕНЬ ${_user.level}*`, m)
+                    this.reply(m.chat, `*¡SE REQUIERE EL NIVEL! ${plugin.level} PARA USAR ESTE COMANDO. TU NIVEL ES ${_user.level}*`, m)
                     continue // If the level has not been reached
                 }
                 let extra = {
@@ -378,7 +378,7 @@ export async function handler(chatUpdate) {
                             for (let [jid] of global.owner.filter(([number, _, isDeveloper]) => isDeveloper && number)) {
                                 let data = (await conn.onWhatsApp(jid))[0] || {}
                                 if (data.exists)
-                                    m.reply(`*[¡ОТЧЕТ О КОМАНДНЫХ СБОЯХ!]*\n\n*ПЛАГИН:* ${m.plugin}\n*ПОЛЬЗОВАТЕЛЬ:* ${m.sender}\n*УПРАВЛЕНИЕ:* ${usedPrefix}${command} ${args.join(' ')}\n\n\`\`\`${text}\`\`\`\n\n*[!] СООБЩИТЕ ОБ ЭТОМ СОЗДАТЕЛЮ, ОН ПОПЫТАЕТСЯ ДАТЬ ВАМ РЕШЕНИЕ, ВЫ МОЖЕТЕ ИСПОЛЬЗОВАТЬ КОМАНДУ #reporte*`.trim(), data.jid)
+                                    m.reply(`*[¡REPORTE DE COMANDO CON FALLOS!]*\n\n*PLUGIN:* ${m.plugin}\n*USUARIO:* ${m.sender}\n*COMANDO:* ${usedPrefix}${command} ${args.join(' ')}\n\n\`\`\`${text}\`\`\`\n\n*[!] REPORTELO AL CREADOR, EL TRATARA DE DARLE SOLUCION, PUEDE USAR EL COMANDO #reporte*`.trim(), data.jid)
                             }
                         m.reply(text)
                     }
@@ -537,7 +537,7 @@ export async function callUpdate(callUpdate) {
     for (let nk of callUpdate) {
     if (nk.isGroup == false) {
     if (nk.status == "offer") {
-    let callmsg = await this.reply(nk.from, `Hola *@${nk.from.split('@')[0]}*, las ${nk.isVideo ? 'videollamadas' : 'llamadas'} они запрещены, вы будете заблокированы.\n-\nЕсли вы случайно позвонили, пожалуйста, свяжитесь с моим создателем, чтобы он разблокировал вас!`, false, { mentions: [nk.from] })
+    let callmsg = await this.reply(nk.from, `Hola *@${nk.from.split('@')[0]}*, las ${nk.isVideo ? 'videollamadas' : 'llamadas'} no están permitidas, serás bloqueado.\n-\nSi accidentalmente llamaste póngase en contacto con mi creador para que te desbloquee!`, false, { mentions: [nk.from] })
     //let data = global.owner.filter(([id, isCreator]) => id && isCreator)
     //await this.sendContact(nk.from, data.map(([id, name]) => [id, name]), false, { quoted: callmsg })
     await this.updateBlockStatus(nk.from, 'block')
@@ -558,40 +558,40 @@ export async function deleteUpdate(message) {
         if (chat.delete)
             return
         await this.reply(msg.chat, `
-        ━━━━⬣  *Анти удаление*  ⬣━━━━
-        *■ Номер:* @${participant.split`@`[0]}
-        *■ Вы удалили сообщение..*
-        *■ Что бы я вас больше не ббеспокоил введите команду:*
-        *—◉ #disable antidelete*
-        ━━━━⬣  *Анти удаление*  ⬣━━━━
-        `.trim(), msg, {
-                    mentions: [participant]
-                })
-                this.copyNForward(msg.chat, msg).catch(e => console.log(e, msg))
-            } catch (e) {
-                console.error(e)
-            }
-        }
-        
-        global.dfail = (type, m, conn) => {
-            let msg = {
-                        rowner: '*[ ⚠️ *ВНИМАНИЕ* ⚠️ ] ESTE COMANDO SOLO PUEDE SER UTILIZADO POR EL/LA PROPIETARIO/A (OWNER) DEL BOT*',
-                owner: '*[ ⚠️ *ВНИМАНИЕ* ⚠️ ] РУКИ УБРАЛ С КЛАВИАТУРЫ!КОМАНДА ТОЛЬКО ДЛЯ ВЛАДЕЛЬЦА*',
-                mods: '*[ ⚠️ *ВНИМАНИЕ* ⚠️ ] ESTE COMANDO SOLO PUEDE SER UTILIZADO POR MODERADORES Y EL/LA PROPIETARIO/A (OWNER) DEL BOT*',
-                premium: '*[ ⚠️ *ВНИМАНИЕ* ⚠️ ] КОМАНДА ТОЛЬКО ДЛЯ ПРЕМИУМ ПОЛЬЗОВАТЕЛЕЙ/ОБРАТИТЕСЬ К ZloiAdmiN для решения проблемы)))*',
-                group: '*[ ⚠️ *ВНИМАНИЕ* ⚠️ ] ЭТУ КОМАНДУ ВЫПОЛНЮ ТОЛЬКО В ГРУППЕ*',
-                private: '*[ ⚠️ ВНИМАНИЕ ⚠️ ] ЭТУ КОМАНДУ ВЫПОЛНЮ ТОЛЬКО В ЛИЧКЕ*',
-                admin: '*[ ⚠️ ВНИМАНИЕ ⚠️ ] РУКИ УБРАЛ С КЛАВИАТУРЫ!КОМАНДА ТОЛЬКО ДЛЯ АДМИНОВ*',
-                botAdmin: '*[ ⚠️ ВНИМАНИЕ ⚠️ ] Я МОГУ ВЫПОЛНИТЬ ЭТО ДЕЙСТВИЕ ТОЛЬКО ЕСЛИ ВЫ ДАДИТЕ МНЕ АДМИНКУ)В ПРОТИВНОМ СЛУЧАЕ РАБОТАЙТЕ САМИ*',
-                unreg: '*[ 🛑 ВНИМАНИЕ!! , ВЫ НЕ ЗАРЕГЕСТРИРОВАНЫ 🛑 ]*\n\n*—◉ ЧТО БЫ Я ВЫПОЛНИЛ КОМАНДУ ПРОВЕРЬТЕ ЗАРЕГЕСТРИРОВАНЫ ЛИ ВЫ В МОЕЙ СИСТЕМЕ*\n*➣ #verificar*',
-                restrict: '*[ ⚠️ ВНИМАНИЕ ⚠️ ] Я МОГУ ВЫПОЛНИТЬ ЭТО ДЕЙСТВИЕ ТОЛЬКО ЕСЛИ ВЫ ДАДИТЕ МНЕ АДМИНКУ)В ПРОТИВНОМ СЛУЧАЕ РАБОТАЙТЕ САМИ*'
-            }[type]
-            if (msg) return m.reply(msg)
-        }
-        
-        let file = global.__filename(import.meta.url, true)
-        watchFile(file, async () => {
-            unwatchFile(file)
-            console.log(chalk.redBright("Update 'handler.js'"))
-            if (global.reloadHandler) console.log(await global.reloadHandler())
+━━━━⬣  *Анти удаление*  ⬣━━━━
+*■ Номер:* @${participant.split`@`[0]}
+*■ Вы удалили сообщение..*
+*■ Что бы я вас больше не ббеспокоил введите команду:*
+*—◉ #disable antidelete*
+━━━━⬣  *Анти удаление*  ⬣━━━━
+`.trim(), msg, {
+            mentions: [participant]
         })
+        this.copyNForward(msg.chat, msg).catch(e => console.log(e, msg))
+    } catch (e) {
+        console.error(e)
+    }
+}
+
+global.dfail = (type, m, conn) => {
+    let msg = {
+    	        rowner: '*[ ⚠️ *ВНИМАНИЕ* ⚠️ ] ESTE COMANDO SOLO PUEDE SER UTILIZADO POR EL/LA PROPIETARIO/A (OWNER) DEL BOT*',
+        owner: '*[ ⚠️ *ВНИМАНИЕ* ⚠️ ] РУКИ УБРАЛ С КЛАВИАТУРЫ!КОМАНДА ТОЛЬКО ДЛЯ ВЛАДЕЛЬЦА*',
+        mods: '*[ ⚠️ *ВНИМАНИЕ* ⚠️ ] ESTE COMANDO SOLO PUEDE SER UTILIZADO POR MODERADORES Y EL/LA PROPIETARIO/A (OWNER) DEL BOT*',
+        premium: '*[ ⚠️ *ВНИМАНИЕ* ⚠️ ] КОМАНДА ТОЛЬКО ДЛЯ ПРЕМИУМ ПОЛЬЗОВАТЕЛЕЙ/ОБРАТИТЕСЬ К ZloiAdmiN для решения проблемы)))*',
+        group: '*[ ⚠️ *ВНИМАНИЕ* ⚠️ ] ЭТУ КОМАНДУ ВЫПОЛНЮ ТОЛЬКО В ГРУППЕ*',
+        private: '*[ ⚠️ ВНИМАНИЕ ⚠️ ] ЭТУ КОМАНДУ ВЫПОЛНЮ ТОЛЬКО В ЛИЧКЕ*',
+        admin: '*[ ⚠️ ВНИМАНИЕ ⚠️ ] РУКИ УБРАЛ С КЛАВИАТУРЫ!КОМАНДА ТОЛЬКО ДЛЯ АДМИНОВ*',
+        botAdmin: '*[ ⚠️ ВНИМАНИЕ ⚠️ ] Я МОГУ ВЫПОЛНИТЬ ЭТО ДЕЙСТВИЕ ТОЛЬКО ЕСЛИ ВЫ ДАДИТЕ МНЕ АДМИНКУ)В ПРОТИВНОМ СЛУЧАЕ РАБОТАЙТЕ САМИ*',
+        unreg: '*[ 🛑 ВНИМАНИЕ!! , ВЫ НЕ ЗАРЕГЕСТРИРОВАНЫ 🛑 ]*\n\n*—◉ ЧТО БЫ Я ВЫПОЛНИЛ КОМАНДУ ПРОВЕРЬТЕ ЗАРЕГЕСТРИРОВАНЫ ЛИ ВЫ В МОЕЙ СИСТЕМЕ*\n*➣ #verificar*',
+        restrict: '*[ ⚠️ ВНИМАНИЕ ⚠️ ] Я МОГУ ВЫПОЛНИТЬ ЭТО ДЕЙСТВИЕ ТОЛЬКО ЕСЛИ ВЫ ДАДИТЕ МНЕ АДМИНКУ)В ПРОТИВНОМ СЛУЧАЕ РАБОТАЙТЕ САМИ*'
+    }[type]
+    if (msg) return m.reply(msg)
+}
+
+let file = global.__filename(import.meta.url, true)
+watchFile(file, async () => {
+    unwatchFile(file)
+    console.log(chalk.redBright("Update 'handler.js'"))
+    if (global.reloadHandler) console.log(await global.reloadHandler())
+})
