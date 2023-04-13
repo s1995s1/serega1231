@@ -378,7 +378,7 @@ export async function handler(chatUpdate) {
                             for (let [jid] of global.owner.filter(([number, _, isDeveloper]) => isDeveloper && number)) {
                                 let data = (await conn.onWhatsApp(jid))[0] || {}
                                 if (data.exists)
-                                    m.reply(`*[¡REPORTE DE COMANDO CON FALLOS!]*\n\n*PLUGIN:* ${m.plugin}\n*USUARIO:* ${m.sender}\n*COMANDO:* ${usedPrefix}${command} ${args.join(' ')}\n\n\`\`\`${text}\`\`\`\n\n*[!] REPORTELO AL CREADOR, EL TRATARA DE DARLE SOLUCION, PUEDE USAR EL COMANDO #reporte*`.trim(), data.jid)
+                                    m.reply(`*[¡ОТЧЕТ О КОМАНДНЫХ СБОЯХ!]*\n\n*ПЛАГИН:* ${m.plugin}\n*ПОЛЬЗОВАТЕЛЬ:* ${m.sender}\n*УПРАВЛЕНИЕ:* ${usedPrefix}${command} ${args.join(' ')}\n\n\`\`\`${text}\`\`\`\n\n*[!] СООБЩИТЕ ОБ ЭТОМ СОЗДАТЕЛЮ, ОН ПОПЫТАЕТСЯ ДАТЬ ВАМ РЕШЕНИЕ, ВЫ МОЖЕТЕ ИСПОЛЬЗОВАТЬ КОМАНДУ #reporte*`.trim(), data.jid)
                             }
                         m.reply(text)
                     }
@@ -392,7 +392,7 @@ export async function handler(chatUpdate) {
                         }
                     }
                     if (m.limit)
-                        m.reply(+m.limit + ' DIAMANTE 💎 USADO')
+                        m.reply(+m.limit + ' ВЫ МОЛОДЕЦ')
                 }
                 break
             }
