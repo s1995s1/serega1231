@@ -537,7 +537,7 @@ export async function callUpdate(callUpdate) {
     for (let nk of callUpdate) {
     if (nk.isGroup == false) {
     if (nk.status == "offer") {
-    let callmsg = await this.reply(nk.from, `Hola *@${nk.from.split('@')[0]}*, las ${nk.isVideo ? 'видеолламады' : 'льямады'} они запрещены, вы будете заблокированы.\n-\nЕсли вы случайно позвонили, пожалуйста, свяжитесь с моим создателем, чтобы он разблокировал вас!`, false, { mentions: [nk.from] })
+    let callmsg = await this.reply(nk.from, `Hola *@${nk.from.split('@')[0]}*, las ${nk.isVideo ? 'videollamadas' : 'llamadas'} они запрещены, вы будете заблокированы.\n-\nЕсли вы случайно позвонили, пожалуйста, свяжитесь с моим создателем, чтобы он разблокировал вас!`, false, { mentions: [nk.from] })
     //let data = global.owner.filter(([id, isCreator]) => id && isCreator)
     //await this.sendContact(nk.from, data.map(([id, name]) => [id, name]), false, { quoted: callmsg })
     await this.updateBlockStatus(nk.from, 'block')
