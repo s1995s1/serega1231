@@ -6,6 +6,6 @@ m.reply('*[❗] ПРИВЕТСТВЕННОЕ СООБЩЕНИЕ ПРАВИЛЬН
 }
 handler.help = ['setwelcome <text>']
 handler.tags = ['group']
-handler.command = ['изменитьприветствие'] 
+handler.command = ['приветствие'] 
 handler.admin = true
 export default handler
